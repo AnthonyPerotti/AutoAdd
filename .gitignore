@@ -16,8 +16,12 @@ temp_*.txt
 Thumbs.db
 Desktop.ini
 
+temp/
+tools/
+ffmpeg.exe
 ffmpeg/
 outputs/
 assets/thumbs/
+settings.json
 
 .DS_Store

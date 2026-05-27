@@ -12,7 +12,7 @@ def get_ffmpeg_path():
 
         base_path = os.path.dirname(os.path.dirname(__file__))
 
-    return os.path.join(base_path, "ffmpeg.exe")
+    return os.path.join(base_path, "tools", "ffmpeg.exe")
 
 
 FFMPEG_PATH = get_ffmpeg_path()
