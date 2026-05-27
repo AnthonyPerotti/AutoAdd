@@ -1,8 +1,8 @@
-# AutoAdd
+# AutoAD
 
 Modern desktop application for automated batch video generation using FFmpeg.
 
-AutoAdd allows you to combine Hooks, Bodies and CTAs dynamically, generating hundreds of video variations automatically through a modern desktop interface.
+AutoAD allows you to dynamically combine Hooks, Bodies and CTAs, generating large-scale video variations automatically through a modern desktop interface optimized for speed, usability and workflow automation.
 
 ---
 
@@ -12,19 +12,26 @@ AutoAdd allows you to combine Hooks, Bodies and CTAs dynamically, generating hun
 * Automatic thumbnail previews
 * Dynamic body management
 * Batch video rendering
-* GPU encoder support
-
-  * NVIDIA NVENC
-  * AMD AMF
-  * Intel QSV
-  * CPU x264
-* Real-time progress tracking
+* Real-time render queue
+* Collapsible logs and queue panels
+* Persistent settings system
+* Automatic output folder opening
+* Responsive scrollable interface
 * Instant render stop
-* Scrollable responsive interface
 * FFmpeg integration
-* Multiple hooks, bodies and CTAs
-* Automatic combination calculation
-* Render logging system
+* Automatic video combination system
+* Professional render workflow
+
+---
+
+# Supported Encoders
+
+| Encoder | Hardware |
+|---|---|
+| libx264 | CPU |
+| h264_nvenc | NVIDIA GPU |
+| h264_amf | AMD GPU |
+| h264_qsv | Intel GPU |
 
 ---
 
@@ -39,9 +46,11 @@ AutoAdd allows you to combine Hooks, Bodies and CTAs dynamically, generating hun
 
 # Installation
 
+Clone repository:
+
 ```bash
-git clone https://github.com/yourusername/AutoAdd.git
-cd AutoAdd
+git clone https://github.com/yourusername/AutoAD.git
+cd AutoAD
 ```
 
 Create virtual environment:
@@ -75,58 +84,94 @@ python app.py
 # Build Executable
 
 ```bash
-pyinstaller --onedir --windowed --name AutoAdd --icon=icon.ico --add-data "ffmpeg.exe;." app.py
+pyinstaller ^
+--onedir ^
+--windowed ^
+--name "AutoAD" ^
+--icon="assets/icon.ico" ^
+--add-data "tools;tools" ^
+app.py
 ```
-
----
-
-# AutoAdd v2.0
-
-Major update including:
-
-* Complete UI redesign
-* Thumbnail preview system
-* GPU encoder support
-* Instant stop rendering
-* Dynamic body system
-* Better FFmpeg integration
-* Scrollable modern interface
-* Improved render pipeline
-* Professional workflow improvements
 
 ---
 
 # Project Structure
 
 ```text
-AutoAdd/
+AutoAD/
+│
 ├── app.py
-├── ui.py
-├── ffmpeg.exe
-├── icon.ico
-├── thumbs/
-├── dist/
-└── README.md
+├── requirements.txt
+├── README.md
+│
+├── assets/
+│   └── icon.ico
+│
+├── core/
+│   ├── config.py
+│   ├── ffmpeg.py
+│   ├── render_job.py
+│   ├── renderer.py
+│   ├── thumbnails.py
+│   ├── translations.py
+│   └── state.py
+│
+├── ui/
+│   ├── main_window.py
+│   ├── hooks_panel.py
+│   ├── corpos_panel.py
+│   ├── cta_panel.py
+│   ├── controls_panel.py
+│   ├── logs_panel.py
+│   ├── render_queue_panel.py
+│   └── settings_window.py
+│
+├── tools/
+│   └── ffmpeg.exe
+│
+├── temp/
+│
+└── settings.example.json
 ```
 
 ---
 
-# Supported Encoders
+# Workflow
 
-| Encoder    | Hardware   |
-| ---------- | ---------- |
-| libx264    | CPU        |
-| h264_nvenc | NVIDIA GPU |
-| h264_amf   | AMD GPU    |
-| h264_qsv   | Intel GPU  |
+1. Add Hooks
+2. Add Bodies
+3. Add CTAs
+4. Select output folder
+5. Choose encoder
+6. Generate videos automatically
+
+AutoAD automatically combines all valid variations and generates the final renders in batch.
+
+---
+
+# AutoAD v2.0
+
+Major rewrite including:
+
+* Complete UI redesign
+* Modular architecture
+* RenderManager pipeline
+* RenderJob system
+* Visual render queue
+* Improved FFmpeg handling
+* Persistent settings
+* Better responsiveness
+* Improved rendering stability
+* Cleaner workflow UX
 
 ---
 
 # Notes
 
-* FFmpeg must be available in the project folder.
-* GPU encoding depends on compatible hardware/drivers.
+* FFmpeg must exist inside the `tools/` folder.
+* GPU encoding depends on compatible hardware and drivers.
 * `--onedir` builds are recommended for stability.
+* Render queue is automatically generated during rendering sessions.
 
 ---
 
