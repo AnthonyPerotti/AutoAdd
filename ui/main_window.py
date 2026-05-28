@@ -617,20 +617,11 @@ class AutoAddApp(ctk.CTk):
         )
 
         self.toggle_logs_btn.grid(
-            row=4,
-            column=0,
-            padx=(20, 10),
-            pady=(0, 10),
-            sticky="w"
+            row=4, column=0, padx=(20, 10), pady=(0, 10), sticky="w"
         )
 
         self.logs_panel.grid(
-            row=5,
-            column=0,
-            columnspan=2,
-            padx=20,
-            pady=(0, 10),
-            sticky="nsew"
+            row=5, column=0, columnspan=2, padx=20, pady=(0, 10), sticky="nsew"
         )
 
         self.logs_panel.grid_remove()
@@ -645,20 +636,11 @@ class AutoAddApp(ctk.CTk):
         )
 
         self.toggle_queue_btn.grid(
-            row=4,
-            column=1,
-            padx=(10, 20),
-            pady=(0, 10),
-            sticky="e"
+            row=4, column=1, padx=(10, 20), pady=(0, 10), sticky="e"
         )
 
         self.queue_panel.grid(
-            row=6,
-            column=0,
-            columnspan=2,
-            padx=20,
-            pady=(0, 20),
-            sticky="nsew"
+            row=6, column=0, columnspan=2, padx=20, pady=(0, 20), sticky="nsew"
         )
 
         self.queue_panel.grid_remove()
